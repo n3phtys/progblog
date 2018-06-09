@@ -64,14 +64,14 @@ There is no mandatory need for VS Code, and many people have their own favorit t
 
 Once you have installed VS Code, open it. You should see the following.
 
-{{< figure src="/img/2018/06/vscode_landing_page.PNG" width="100%" title="What you see when opening Visual Studio Code with no open directory or file" >}}
+{{< figure src="img/2018/06/vscode_landing_page.PNG" width="100%" title="What you see when opening Visual Studio Code with no open directory or file" >}}
 # First program: 'Hello World' in Node.js
 
 Now we will actually create a real application. Applications in Node.js are source code files which we can run with the `node` command on our terminal, so running a file called `abc.js` would simple mean executing `node /path/to/abc.js` in our terminal. The file ending `.js` is irrelevant to the execution and only there to make it clear we are writing JavaScript files - but it's still recommended to always use the right file endings!
 
 To begin, create a new folder and open it in Visual Studio Code. You may do so by using `File > Open folder...`. Now create a new file in this folder called `app.js`. You may open this file in the editor tab by doublecliking it in the left explorer pane. If you do not see the explorer pane, click on the 'files' symbol on the left side of Visual Studio Code.  
 
-{{< figure src="/img/2018/06/vsc_new_js_app.PNG" width="100%" title="You now have a folder containing one empty JavaScript file" >}}
+{{< figure src="img/2018/06/vsc_new_js_app.PNG" width="100%" title="You now have a folder containing one empty JavaScript file" >}}
 
 
 Now enter into this file 
@@ -87,14 +87,14 @@ Let's unwrap this first line of code:
 Let's finally execute our first program! As we explained at the start of this section, you have to only execute `node app.js` in a terminal while inside this folder. If you are new to terminals and command lines, don't worry, Visual Studio Code can help us!
 
 
-{{< figure src="/img/2018/06/vscode_terminal.PNG" width="100%" title="VS Code has an integrated terminal to easily execute commands" >}}
+{{< figure src="img/2018/06/vscode_terminal.PNG" width="100%" title="VS Code has an integrated terminal to easily execute commands" >}}
 
 
 You can open the terminal embedded into VS Code by pressing `ALT+F12` or by pressing `F1`, entering `terminal` and executing the command `Toggle Integrated Terminal` with a press on Enter. This terminal will automatically open inside the given folder.
 
 Now enter `node app.js` and press Enter to execute the command. It will immediately print out the message in a new line and end the program, giving you a new command prompt (which begins with `$`, so don't be confused by that).
 
-{{< figure src="/img/2018/06/vscode_terminal_hello.PNG" width="100%" title="Executing our first JavaScript program prints out 'Hello World' to the terminal" >}}
+{{< figure src="img/2018/06/vscode_terminal_hello.PNG" width="100%" title="Executing our first JavaScript program prints out 'Hello World' to the terminal" >}}
 
 
 ## Adding variables and multiple lines 
@@ -123,7 +123,7 @@ Type conversion is a complicated issue and one of the reasons JavaScript is so m
 
 If you want to see the final result of the concatenation for yourself, execute the new program by running `node app.js` inside the terminal another time.
 
-{{< figure src="/img/2018/06/vsc_vars_done.PNG" width="100%" title="The answer is 42, who would have thought?" >}}
+{{< figure src="img/2018/06/vsc_vars_done.PNG" width="100%" title="The answer is 42, who would have thought?" >}}
 
 Congratulations! You now also know about variables, numbers, multiple statements, concatenations of strings, conversion between numbers and strings, and basic arithmetic. A lot of new stuff in only 4 new lines of code!
 
