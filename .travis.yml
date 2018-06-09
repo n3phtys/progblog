@@ -9,6 +9,9 @@ before_install:
   -o bin/hugo.tar.gz
 - tar xzvvf bin/hugo.tar.gz -C ./bin
 script:
+- "cat ./config.toml"
+- "sed -i -e 's/"\/"#ci://g' ./config.toml"
+- "cat ./config.toml"
 - "./bin/hugo"
 deploy:
   provider: pages

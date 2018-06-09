@@ -1,5 +1,5 @@
-baseurl = "/"#ci:"https://n3phtys.github.io/progblog/"
-title = "prog$blog"
+baseurl = "https://example.org/"
+title = "Nederburg"
 theme = "hugo-nederburg-theme"
 languageCode = "en-us"
 # Enable comments by entering your Disqus shortname
@@ -7,18 +7,20 @@ disqusShortname = ""
 # Enable Google Analytics by entering your tracking code
 googleAnalytics = ""
 preserveTaxonomyNames = true
-paginate = 3 #frontpage pagination
+paginate = 5 #frontpage pagination
 
 [params]
-  slogan = "programming and other stuff"
-  description = "My personal blog about programming, the world, and everything else I have an opinion on" # meta description
-  author = "Christopher Kaag"
-  authorLink = "https://github.com/n3phtys/"
+  slogan = "A fast &amp; secure theme"
+  description = "Describe your website" # meta description
+  author = "Göran Svensson"
+  authorLink = "https://appernetic.io/"
   bio = [
-    ""
+    "Göran is an avid blogger and the founder of <a href='https://appernetic.io/'>Appernetic.io</a>. This is the author bio shown after posts."
   ]
   copyright = [
-    ""
+    "&copy; 2018 Göran Svensson",
+    "Nederburg Hugo Theme by [Appernetic](https://appernetic.io).",
+    "A port of Tracks by Compete Themes."
   ]
 
 
@@ -34,7 +36,7 @@ paginate = 3 #frontpage pagination
      # - send a dummy email yourself to confirm your account
      # - click the confirm link in the email from www.formspree.io
      # - you're done. Happy mailing!
-  email = "christopher.kaag@gmail.com"
+  email = "goran@molnsys.com"
 
   # Nav links in the side bar
   [[menu.main]]
@@ -53,12 +55,12 @@ paginate = 3 #frontpage pagination
   weight = 3
 
   [params.social]
-  facebook      = ""
-  googleplus    = ""
-  email         = "christopher.kaag@gmail.com"
-  twitter       = ""
-  linkedin      = "https://www.linkedin.com/in/christopher-kaag-a38021155/"
-  stackoverflow = "https://stackoverflow.com/users/1907778/hard-at-sleep"
-  instagram     = ""
-  github        = "https://github.com/n3phtys"
-  pinterest     = ""
+  facebook      = "full profile url in facebook"
+  googleplus    = "full profile url in googleplus"
+  email         = "email@example.com"
+  twitter       = "full profile url in twitter"
+  linkedin      = "full profile url in linkedin"
+  stackoverflow = "full profile url in stackoverflow"
+  instagram     = "full profile url in instagram"
+  github        = "full profile url in github"
+  pinterest     = "full profile url in pinterest"
