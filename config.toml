@@ -2,6 +2,7 @@ baseurl = "/"#ci:"https://n3phtys.github.io/progblog/"
 title = "prog$blog"
 theme = "hugo-nederburg-theme"
 languageCode = "en-us"
+canonifyURLs = true
 # Enable comments by entering your Disqus shortname
 disqusShortname = ""
 # Enable Google Analytics by entering your tracking code
