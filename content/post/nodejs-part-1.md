@@ -1,15 +1,15 @@
-+++
-categories = ["NodeJS", "Progamming"]
-tags = ["tutorial", "backend", "server"]
-date = "2018-06-09T18:25:22+05:30"
-description = "Learn how to program Hello World in Node.js"
-image = "img/2018/06/node-js-logo.png"
-title = "Node.js for beginners: Part 1 (of ∞)"
-type = "post"
-draft = false
-weight = 1
-showonlyimage = false
-+++
+---
+categories : ["NodeJS", "Progamming"]
+tags : ["tutorial", "backend", "server"]
+date : "2018-06-09"
+description : "Learn how to program Hello World in Node.js"
+image : "img/2018/06/node-js-logo.png"
+title : "Node.js for beginners: Part 1 (of ∞)"
+type : "post"
+draft : false
+weight : 1
+showonlyimage : false
+---
 
 # What is JavaScript?
 

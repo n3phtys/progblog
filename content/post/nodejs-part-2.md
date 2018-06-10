@@ -1,15 +1,14 @@
-+++
-categories = ["NodeJS", "Progamming"]
-tags = ["tutorial", "backend", "server", "datatypes"]
-date = "2018-06-10T18:25:22+05:30"
-description = "Learn how to deal with console input, data types, and multiple files in Node.js"
-image = "img/2018/06/node-js-logo.png"
-title = "Node.js for beginners: Part 2"
-type = "post"
-draft = false
-weight = 1
-showonlyimage = false
-+++
+---
+categories : ["NodeJS", "Progamming"]
+tags : ["tutorial", "backend", "server", "datatypes"]
+date : "2018-06-10"
+description : "Learn how to deal with console input, data types, and multiple files in Node.js"
+title : "Node.js for beginners: Part 2"
+type : "post"
+draft : false
+weight : 1
+showonlyimage : false
+---
 
 # Types of data in JavaScript
 
@@ -155,16 +154,16 @@ You may remember the automatic type conversion we have been talking about in par
 
 The next thing are `if` statement. An `if` statement has one or two so called branches (the second being the optional `else` branch), based on a `boolean` value. The first branch or block is only executed if the value `=== true`, and the second block - if there is one - only executes if the value `=== false`. Let's see this in code:
 
-   var b = true;
-   if (b) {
-       console.log('I like Alice');
-   }
+    var b = true;
+    if (b) {
+        console.log('I like Alice');
+    }
 
-   if (!b) {
-       console.log('I like Bob');
-   } else {
-       console.log('I like Charlie');
-   }
+    if (!b) {
+        console.log('I like Bob');
+    } else {
+        console.log('I like Charlie');
+    }
 
 If we execute the code, we will be once again seeing that we do not like Bob, but we do like Alice and Charlie. The second `if`-condition is `!b`, which equals `false`, therefore we only execute the else branch of the second `if` statement.
 
@@ -190,9 +189,10 @@ We are also experiencing for the first time code indentation. For the computer i
 
 Try executing our first dynamic program with multiple inputs:
 
-    node app.js
-    node app.js Bob
-    node app.js Alice
+    $ node app.js
+    $ node app.js Bob
+    $ node app.js Alice
+
 
 Congratulations, now you know how to use program arguments, and how to use conditional statements to influence your execution flow.
 

@@ -1,15 +1,15 @@
-+++
-categories = ["NodeJS", "Progamming"]
-tags = ["tutorial", "backend", "server", "datatypes"]
-date = "2018-06-13T18:25:22+05:30"
-description = "How to use npm and express.js to build a Node.js based HTTP server"
-image = "img/2018/06/node-js-logo.png"
-title = "Node.js for beginners: Part 3"
-type = "post"
-draft = true
-weight = 1
-showonlyimage = false
-+++
+---
+categories : ["NodeJS", "Progamming"]
+tags : ["tutorial", "backend", "server", "datatypes"]
+date : "2018-06-13"
+description : "How to use npm and express.js to build a Node.js based HTTP server"
+image : "img/2018/06/node-js-logo.png"
+title : "Node.js for beginners: Part 3"
+type : "post"
+draft : true
+weight : 1
+showonlyimage : false
+---
 
 # Our first HTTP server by hand 
 
