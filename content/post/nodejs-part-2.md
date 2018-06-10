@@ -1,5 +1,5 @@
 ---
-categories : ["NodeJS", "Progamming"]
+categories : ["NodeJS", "Programming"]
 tags : ["tutorial", "backend", "server", "datatypes"]
 date : "2018-06-10"
 description : "Learn how to deal with console input, data types, and multiple files in Node.js"
@@ -14,7 +14,7 @@ showonlyimage : false
 
 In our previous post we discovered two basic types a variable can have:
 
-* `number`, a number, more specificially a floating point number (with 64 bits), allowing us to use `+`, `/`, and other numeric operands.
+* `number`, a number, more specifically a floating point number (with 64 bits), allowing us to use `+`, `/`, and other numeric operands.
 * `string`, a sequence of characters that combine to a text, which we can also concatenate using `+`.
 
 There are a few more we need to talk about before continuing.
@@ -42,7 +42,7 @@ makes `x` a number,
 
     var y = [1, 2, 3];
 
-makes `y` an array, or more specifially: an array of numbers. Therefore an array is a collection of multiple values. Of course, these kind of collections can be modified afterwards, and also queried by an index (always starting with 0):
+makes `y` an array, or more specifically: an array of numbers. Therefore an array is a collection of multiple values. Of course, these kind of collections can be modified afterwards, and also queried by an index (always starting with 0):
 
     y.push(42); //y = [1, 2, 3, 42];
     console.log( y[3] ); //prints out the fourth element: 42
@@ -94,7 +94,7 @@ Because of this mapping from name to value, JavaScript object are also called `m
 There are two special values and types:
 
 * `undefined` is the value of a variable that has not been given any value. In other terms, it's the lack of a value. If you forget to set a variable's value, it will contain `undefined`. 
-* `null` is a value of type object, but without being an object. You can use it to describe a missing value of type object. JavaScript itself never sets `null`. It's up to you or other programmers to use it, and to decide on what to use it for. Some programmers try to not use `null` at all, and some programming languages have gotten rid of it alltogether.
+* `null` is a value of type object, but without being an object. You can use it to describe a missing value of type object. JavaScript itself never sets `null`. It's up to you or other programmers to use it, and to decide on what to use it for. Some programmers try to not use `null` at all, and some programming languages have gotten rid of it altogether.
 
 
     var x;
@@ -307,7 +307,7 @@ Our main file, `app.js`, meanwhile doesn't contain the `prompt`function anymore.
 
 Congratulations! Now you know how to use `modules` to separate code into multiple files, and access that code in other JavaScript files.
 
-# Conclussion
+# Conclusion
 In this part we learned about JavaScript types, including arrays and objects. We also have shortly visited simple loops of arrays, conditional statements via `if` and explained how to use functions to make code reusable, and explained how the `module` system can be used to reuse this code in multiple applications. Finally, besides printing data to the console, we have also learned how to use program arguments, and how to read in data directly from the console.
 
 Next up in part 3 we will be talking about how to write our first HTTP server, and how to use `npm` to use modules written by other users worldwide in our own code.
