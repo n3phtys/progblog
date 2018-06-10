@@ -100,6 +100,8 @@ There are two special values and types:
 * `undefined` is the value of a variable that has not been given any value. In other terms, it's the lack of a value. If you forget to set a variable's value, it will contain `undefined`. 
 * `null` is a value of type object, but without being an object. You can use it to describe a missing value of type object. JavaScript itself never sets `null`. It's up to you or other programmers to use it, and to decide on what to use it for. Some programmers try to not use `null` at all, and some programming languages have gotten rid of it altogether.
 
+It may become clear what the difference is by seeing real code:
+
 
     var x;
     console.log(x); //will be printing out 'undefined', but it's not a string!
