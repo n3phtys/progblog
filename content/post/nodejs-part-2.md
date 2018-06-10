@@ -23,12 +23,16 @@ There are a few more we need to talk about before continuing.
 
 Besides `number` and `string` we have on more type:
 
-* `boolean`, which means either `true` or `false`. This is the result of a logical operation: something is `true` or it isn't. Most often these kind of values appear within a conditional statement like `if ... else ...`. We will see them often times in actual code, but for now you know enough about `boolean`.
+ `boolean`, which means either `true` or `false`. This is the result of a logical operation: something is `true` or it isn't. Most often these kind of values appear within a conditional statement like `if ... else ...`. We will see them often times in actual code, but for now you know enough about `boolean`.
+
+
 
     var a = true; //is true
     var b = false; //is not true
     var c = a & b; // & means 'AND' => is not true
     var d = a | b; // | means 'OR' => is true
+
+
     var e = (a & b) && b; //&& is an early return operand: if the left operand is false, the result has to be false, and we will not evaluate the right operand (it cannot change the result). In this case it does the same as a single &, but it's good to talk about it, because && appears often in actual code 
 
 
