@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on prog$blog</title>
+    <link>https://n3phtys.github.io/progblog/categories/</link>
+    <description>Recent content in Categories on prog$blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://n3phtys.github.io/progblog/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NodeJS</title>
+      <link>https://n3phtys.github.io/progblog/categories/nodejs/</link>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://n3phtys.github.io/progblog/categories/nodejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://n3phtys.github.io/progblog/categories/programming/</link>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://n3phtys.github.io/progblog/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

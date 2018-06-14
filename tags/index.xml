@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on prog$blog</title>
+    <link>https://n3phtys.github.io/progblog/tags/</link>
+    <description>Recent content in Tags on prog$blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://n3phtys.github.io/progblog/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Backend</title>
+      <link>https://n3phtys.github.io/progblog/tags/backend/</link>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://n3phtys.github.io/progblog/tags/backend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Datatypes</title>
+      <link>https://n3phtys.github.io/progblog/tags/datatypes/</link>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://n3phtys.github.io/progblog/tags/datatypes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Server</title>
+      <link>https://n3phtys.github.io/progblog/tags/server/</link>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://n3phtys.github.io/progblog/tags/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tutorial</title>
+      <link>https://n3phtys.github.io/progblog/tags/tutorial/</link>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://n3phtys.github.io/progblog/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

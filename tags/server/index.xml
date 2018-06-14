@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Server on prog$blog</title>
+    <link>https://n3phtys.github.io/progblog/tags/server/</link>
+    <description>Recent content in Server on prog$blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://n3phtys.github.io/progblog/tags/server/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Node.js for beginners: Part 2</title>
+      <link>https://n3phtys.github.io/progblog/post/nodejs-part-2/</link>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://n3phtys.github.io/progblog/post/nodejs-part-2/</guid>
+      <description>Types of data in JavaScript In our previous post we discovered two basic types a variable can have:
+ number, a number, more specifically a floating point number (with 64 bits), allowing us to use +, /, and other numeric operands. string, a sequence of characters that combine to a text, which we can also concatenate using +.  There are a few more we need to talk about before continuing.</description>
+    </item>
+    
+    <item>
+      <title>Node.js for beginners: Part 1 (of ∞)</title>
+      <link>https://n3phtys.github.io/progblog/post/nodejs-part-1/</link>
+      <pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://n3phtys.github.io/progblog/post/nodejs-part-1/</guid>
+      <description>What is JavaScript? JavaScript started out as a simple way of enabling interactivity and dynamic content in websites. JavaScript can be embedded in a website, which your browser will see, and execute the encoded program.
+Because otherwise it would be a gigantic security risk, browsers sandbox the execution of those programs, and only allow specific actions that these programs can do. One no-go is file access: JavaScript programs are not allowed to read or write files on your computer.</description>
+    </item>
+    
+  </channel>
+</rss>

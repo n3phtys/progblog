@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://n3phtys.github.io/progblog/"
+        },
+        "articleSection" : "post",
+        "name" : "Node.js for beginners: Part 2",
+        "headline" : "Node.js for beginners: Part 2",
+        "description" : "Learn how to deal with console input, data types, and multiple files in Node.js",
+        "inLanguage" : "pt-BR",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-06-10 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-06-10 00:00:00 &#43;0000 UTC",
+        "url" : "https://n3phtys.github.io/progblog/post/nodejs-part-2/",
+        "wordCount" : "3129",
+        "image" : https://n3phtys.github.io/progblog/%!s(&lt;nil&gt;)",
+        "keywords" : [ "tutorial","backend","server","datatypes","Blog" ]   
+    }
+    </script>
+
+ <title>Node.js for beginners: Part 2 </title>
+
+
+<meta name="description" content="Learn how to deal with console input, data types, and multiple files in Node.js" />
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" id="ct-tracks-google-fonts-css" href="//fonts.googleapis.com/css?family=Raleway%3A400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=4.7.2" type="text/css" media="all">
+<link rel="stylesheet" href="https://n3phtys.github.io/progblog/css/font-awesome.min.css" type='text/css' media='all'>
+
+<link href="https://n3phtys.github.io/progblog/css/style.css" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+
+<link href="https://n3phtys.github.io/progblog/css/custom.css" rel="stylesheet" type='text/css' media='all'>
+<link rel="shortcut icon" href="https://n3phtys.github.io/progblog/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://n3phtys.github.io/progblog/img/favicon.ico" type="image/x-icon">
+
+
+</head>
+
+
+<body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
+  
+  <div id="overflow-container" class="overflow-container">
+    <a class="skip-content" href="#main">Skip to content</a>
+    <header id="site-header" class="site-header" role="banner">
+      <div class='top-navigation'>
+        <div class='container'>
+
+  <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+    <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
+
+    <div class="menu">
+
+      <ul id="menu-secondary-items" class="menu-secondary-items">
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="https://n3phtys.github.io/progblog/categories/nodejs">NodeJS</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="https://n3phtys.github.io/progblog/categories/programming">Programming</a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <ul class="social-media-icons">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li>
+      <a href="mailto:christopher.kaag@gmail.com" data-animate-hover="pulse" class="email">
+        <i class="fa fa-envelope" title="email"></i>
+        <span class="screen-reader-text">email</span>
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://www.linkedin.com/in/christopher-kaag-a38021155/" data-animate-hover="pulse" class="linkedin" target="_blank">
+        <i class="fa fa-linkedin" title="linkedin"></i>
+        <span class="screen-reader-text">linkedin</span>
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://stackoverflow.com/users/1907778/hard-at-sleep" data-animate-hover="pulse" class="stackoverflow" target="_blank">
+        <i class="fa fa-stack-overflow" title="stackoverflow"></i>
+        <span class="screen-reader-text">stackoverflow</span>
+      </a>
+    </li>
+    
+
+
+    
+    <li>
+      <a href="https://github.com/n3phtys" data-animate-hover="pulse" class="github" target="_blank">
+        <i class="fa fa-github" title="github"></i>
+        <span class="screen-reader-text">github</span>
+      </a>
+    </li>
+    
+
+
+    
+
+
+  </ul></div>
+
+      </div>
+
+      <div class="container">
+        <div id="title-info" class="title-info">
+  <div id='site-title' class='site-title'>
+    
+    <a href="https://n3phtys.github.io/progblog/"> prog$blog </a>
+    </div>
+  </div>
+  <button id="toggle-navigation" class="toggle-navigation">
+    <i class="fa fa-bars"></i>
+  </button>
+
+  <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+  <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+    
+    <p class="site-description">programming and other stuff</p>
+    
+
+    <div class="menu">
+      <ul id="menu-primary-items" class="menu-primary-items">
+        
+        
+        <li id="menu-item" class='menu-item menu-item-type-custom menu-item-object-custom '>
+          <a href="https://n3phtys.github.io/">Home</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://n3phtys.github.io/progblog/about/">About</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://n3phtys.github.io/progblog/contact/">Get in touch</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+      </div>
+    </header>
+
+    <div id="main" class="main" role="main">
+
+      
+  <div id="loop-container" class="loop-container">
+    
+
+      <div class="post type-post status-publish format-standard hentry category-standard category-travel entry full-without-featured odd excerpt-1">
+
+        
+        <div class="entry-meta">
+          <span class="date">10 June</span>
+          <span> / </span>
+
+          <span class="author">
+            
+            <a href="https://github.com/n3phtys/" title="Posts by Christopher Kaag" rel="author">Christopher Kaag</a>
+            
+          </span>
+
+
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="https://n3phtys.github.io/progblog/categories/NodeJS">NodeJS</a>
+          </span>
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="https://n3phtys.github.io/progblog/categories/Programming">Programming</a>
+          </span>
+          
+
+
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'> Node.js for beginners: Part 2</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              
+
+<h1 id="types-of-data-in-javascript">Types of data in JavaScript</h1>
+
+<p>In our previous post we discovered two basic types a variable can have:</p>
+
+<ul>
+<li><code>number</code>, a number, more specifically a floating point number (with 64 bits), allowing us to use <code>+</code>, <code>/</code>, and other numeric operands.</li>
+<li><code>string</code>, a sequence of characters that combine to a text, which we can also concatenate using <code>+</code>.</li>
+</ul>
+
+<p>There are a few more we need to talk about before continuing.</p>
+
+<h2 id="basic-types">Basic Types</h2>
+
+<p>Besides <code>number</code> and <code>string</code> we have on more type:</p>
+
+<p><code>boolean</code>, which means either <code>true</code> or <code>false</code>. This is the result of a logical operation: something is <code>true</code> or it isn&rsquo;t. Most often these kind of values appear within a conditional statement like <code>if ... else ...</code>. We will see them often times in actual code, but for now you know enough about <code>boolean</code>.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>; <span style="color:#75715e">//is true
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>; <span style="color:#75715e">//is not true
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">b</span>; <span style="color:#75715e">// &amp; means &#39;AND&#39; =&gt; is not true
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">b</span>; <span style="color:#75715e">// | means &#39;OR&#39; =&gt; is true
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">e</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">b</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">b</span>; <span style="color:#75715e">//&amp;&amp; is an early return operand: if the left operand is false, the result has to be false, and we will not evaluate the right operand (it cannot change the result). In this case it does the same as a single &amp;, but it&#39;s good to talk about it, because &amp;&amp; appears often in actual code 
+</span><span style="color:#75715e"></span></code></pre></div>
+
+<h2 id="arrays">Arrays</h2>
+
+<p>An <code>array</code> is a completely different type: You may explain it to yourself as a list. While</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</code></pre></div>
+
+<p>makes <code>x</code> a number,</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>];
+</code></pre></div>
+
+<p>makes <code>y</code> an array, or more specifically: an array of numbers. Therefore an array is a collection of multiple values. Of course, these kind of collections can be modified afterwards, and also queried by an index (always starting with 0):</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">y</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">42</span>); <span style="color:#75715e">//y = [1, 2, 3, 42];
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#a6e22e">y</span>[<span style="color:#ae81ff">3</span>] ); <span style="color:#75715e">//prints out the fourth element: 42
+</span><span style="color:#75715e"></span></code></pre></div>
+
+<p>To be complete, it is also possible to have empty arrays:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">q</span> <span style="color:#f92672">=</span> []; <span style="color:#75715e">//has no element in it
+</span><span style="color:#75715e"></span></code></pre></div>
+
+<p>And it&rsquo;s also possible to remove existing elements by their index:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>];
+<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// q = [4,6];
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// q = [6];
+</span><span style="color:#75715e"></span></code></pre></div>
+
+<p>While we will be seeing more on control flow loops later in this post, a simple loop is the so called <code>for-each-loop</code>:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">for</span> ( <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">element</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">y</span> ) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">element</span>);
+}
+</code></pre></div>
+
+<p>This block of code will iterate over each element in the array <code>y</code>, and print each of those elements out on the console, in a separate line. While it&rsquo;s also possible to write 4 separate <code>console.log(y[...]);</code> with each index, it unnecessarily repeats the same code. Our new loop also allows us to deal with arrays we don&rsquo;t know the size of yet. It will still print out every single element, leaving none out.</p>
+
+<h2 id="objects-maps">Objects / Maps</h2>
+
+<p>You probably heard about object oriented programming, or OOP before. We will now be talking about those objects.</p>
+
+<p>In JavaScript, an object consists of multiple fields of whatever type. Each of those fields has a name. To be precise, each field maps from this given name to the contained value. You can set an object&rsquo;s field by the so called dot-syntax: <code>&lt;object&gt;.&lt;field&gt; = &lt;value&gt;;</code>. For an example:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">my_object</span> <span style="color:#f92672">=</span> {}; <span style="color:#75715e">//an object without fields
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">my_object</span>.<span style="color:#a6e22e">first_field</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;world&#39;</span>;
+<span style="color:#a6e22e">my_object</span>.<span style="color:#a6e22e">second_field</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">my_object</span>.<span style="color:#a6e22e">first_field</span>); <span style="color:#75715e">//prints out &#39;world&#39;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">my_object</span>.<span style="color:#a6e22e">second_field</span>); <span style="color:#75715e">//prints out 42
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">other_obj</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">a</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">13</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">c</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;hello world&#39;</span> }; <span style="color:#75715e">//defines a new object with three fields in the same line
+</span><span style="color:#75715e"></span></code></pre></div>
+
+<p>Because of this mapping from name to value, JavaScript object are also called <code>maps</code>. The dot-syntax is not the only way to access fields:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">my_object</span>[<span style="color:#e6db74">&#34;first_field&#34;</span>]); <span style="color:#75715e">//prints out &#39;hello&#39;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">my_object</span>[<span style="color:#e6db74">&#34;first_field&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">13</span>; 
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">my_object</span>.<span style="color:#a6e22e">first_field</span>); <span style="color:#75715e">//prints out 13 this time
+</span><span style="color:#75715e"></span></code></pre></div>
+
+<h2 id="null-and-undefined">null and undefined</h2>
+
+<p>There are two special values and types:</p>
+
+<ul>
+<li><code>undefined</code> is the value of a variable that has not been given any value. In other terms, it&rsquo;s the lack of a value. If you forget to set a variable&rsquo;s value, it will contain <code>undefined</code>.</li>
+<li><code>null</code> is a value of type object, but without being an object. You can use it to describe a missing value of type object. JavaScript itself never sets <code>null</code>. It&rsquo;s up to you or other programmers to use it, and to decide on what to use it for. Some programmers try to not use <code>null</code> at all, and some programming languages have gotten rid of it altogether.</li>
+</ul>
+
+<p>It may become clear what the difference is by seeing real code:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span>;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span>); <span style="color:#75715e">//will be printing out &#39;undefined&#39;, but it&#39;s not a string!
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span>); <span style="color:#75715e">//prints out &#39;null&#39;, which is also not a string
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">x</span>[<span style="color:#e6db74">&#34;my_field&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>; <span style="color:#75715e">// throws an error, because &#39;null&#39; is not an object and therefore cannot have fields
+</span><span style="color:#75715e"></span></code></pre></div>
+
+<p>So much on the different types of JavaScript. Thanks to arrays and objects / maps we can represent any type of data within a tree of multiple objects and multiple arrays. Not to sound cheesy, but our minds are the only limit.
+Let&rsquo;s get back to actual coding. It&rsquo;s recommended to create a new folder with a new empty <code>app.js</code> for each blog post if you want to keep your previous content. You may also keep the same folder, and rename the previous file to <code>app_1.js</code> or something, so that <code>app.js</code> is the name of the current program.</p>
+
+<h1 id="making-our-program-read-in-arguments">Making our program read in arguments</h1>
+
+<p>So far our programs have only been printing out values, and containing basic arithmetic expressions or concatenation of strings. It&rsquo;s time to make it depend on what we put into it! Enter program arguments.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">args</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">argv</span>; <span style="color:#75715e">//process is a global object given by node.js, and argv is a field containing the whitespace delimited arguments of the program call
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arg</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">args</span>) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arg</span>); <span style="color:#75715e">//print out each argument
+</span><span style="color:#75715e"></span>}
+</code></pre></div>
+
+<p>Let&rsquo;s execute this program on the command line and see the output:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ node app.js hello world <span style="color:#ae81ff">42</span>
+node
+app.js
+hello
+world
+<span style="color:#ae81ff">42</span></code></pre></div>
+
+<p>We see that it parses the whole command, even though <code>node app.js</code> are not arguments to our program, but <code>node</code> and our program as an argument to <code>node</code> itself. Therefore we have to start our arguments at index <code>2</code>. It&rsquo;s also possible to instead use:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">args</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">argv</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">2</span>); <span style="color:#75715e">//will only contain our arguments
+</span><span style="color:#75715e"></span></code></pre></div>
+
+<p>Let&rsquo;s take those arguments and implement a simple logic: if there are no arguments, print out &lsquo;hello world&rsquo;. If there is an argument, like a name, print out &lsquo;hello &rsquo; followed by the argument, except when it&rsquo;s Bob, because hate bob. We will instead tell him to &lsquo;go home bob, you&rsquo;re not welcome here.</p>
+
+<p>During this task, we will be introducing the <code>if</code> conditional statement, and also comparison between strings. Let&rsquo;s start with comparison:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">32</span>; <span style="color:#75715e">//a = 32
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">32</span>; <span style="color:#75715e">//b = true
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">true</span>; <span style="color:#75715e">//c = false
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hello &#39;</span>; <span style="color:#75715e">// d = &#39;hello &#39;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">e</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">d</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;world&#39;</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;hello world&#39;</span>; <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">f</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">d</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;world&#39;</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;hello bob&#39;</span>; <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">g</span> <span style="color:#f92672">=</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">f</span>; <span style="color:#75715e">// g = !false = true 
+</span><span style="color:#75715e"></span></code></pre></div>
+
+<p>Simple enough. You may be confused why the comparison is 3 <code>=</code>. Let&rsquo;s go through this: 1 <code>=</code> is the assignment operator, which we have been using all along to assign values to variables. 2 <code>=</code> meanwhile is the value based comparison. 3 <code>=</code> is the type-contextual comparison, and most often what we want. Let&rsquo;s explain the difference on actual code:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;42&#39;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">y</span>; <span style="color:#75715e">//true
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">y</span>; <span style="color:#75715e">//false
+</span><span style="color:#75715e"></span></code></pre></div>
+
+<p>You may remember the automatic type conversion we have been talking about in part 1. The normal comparison operator only cares for values, so it automatically converts between types, which makes the comparison true in this case. But x is a string, and y is a number, so we do not want to see them as equal (in most cases at least). That&rsquo;s why we use <code>===</code> instead, which first checks if the types are equals, before it checks if the values are equal.</p>
+
+<p>The next thing are <code>if</code> statement. An <code>if</code> statement has one or two so called branches (the second being the optional <code>else</code> branch), based on a <code>boolean</code> value. The first branch or block is only executed if the value <code>=== true</code>, and the second block - if there is one - only executes if the value <code>=== false</code>. Let&rsquo;s see this in code:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">b</span>) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;I like Alice&#39;</span>);
+}
+
+<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">b</span>) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;I like Bob&#39;</span>);
+} <span style="color:#66d9ef">else</span> {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;I like Charlie&#39;</span>);
+}
+</code></pre></div>
+
+<p>If we execute the code, we will be once again seeing that we do not like Bob, but we do like Alice and Charlie. The second <code>if</code>-condition is <code>!b</code>, which equals <code>false</code>, therefore we only execute the else branch of the second <code>if</code> statement.</p>
+
+<p>Let&rsquo;s combine this into our program. We will be assuming that we only care for the first argument if there are multiple, mainly for simplicity.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hello &#39;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">args</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">argv</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">2</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">number_of_arguments</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">args</span>.<span style="color:#a6e22e">length</span>; <span style="color:#75715e">//gives us a number that is the number of arguments given
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">number_of_arguments</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span>) {
+    <span style="color:#a6e22e">message</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;world&#39;</span>; <span style="color:#75715e">//can you guess what += does?
+</span><span style="color:#75715e"></span>} <span style="color:#66d9ef">else</span> {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">args</span>[<span style="color:#ae81ff">0</span>];
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">name</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;Bob&#39;</span>) {
+        <span style="color:#a6e22e">message</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">name</span>;
+    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;go home bob&#39;</span>;
+    }
+}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">message</span>);
+</code></pre></div>
+
+<p>We are also experiencing for the first time code indentation. For the computer it&rsquo;s irregardless, but for a programmer it&rsquo;s easier to align code within a specific block by a number of spaces compared to the code outside that block. Visual Studio Code can automatically do this kind of formatting via <code>ALT+CTRL+L</code>.</p>
+
+<p>Try executing our first dynamic program with multiple inputs:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ node app.js
+$ node app.js Bob
+$ node app.js Alice</code></pre></div>
+
+<p>Congratulations, now you know how to use program arguments, and how to use conditional statements to influence your execution flow.</p>
+
+<h1 id="making-our-program-interactive">Making our program interactive</h1>
+
+<p>Sometimes restarting our project with new arguments is not enough. Instead, we want to influence the program while it is running. Most programs we interact with work like that: Your code editor does, your operating system, your browser, even the web server serving this blog post isn&rsquo;t restarted again and again, but instead listens for input and changes its behavior based on that input.</p>
+
+<p>The simplest kind of input is textual input from the terminal. In this case, we can write normal text in the console. Everytime we use the enter key to finish a line, this line gets send to the current program as a &lsquo;string&rsquo;, which can be used normally.</p>
+
+<p>We will be writing a string collector: we can give it any string besides &lsquo;exit&rsquo; and &lsquo;list&rsquo;, and it will add this string to one big array. If we enter &lsquo;list&rsquo; it will instead print out each string in order. If we enter &lsquo;exit&rsquo; it will end our program - as long as we don&rsquo;t enter &lsquo;exit&rsquo;, our program should continue and keep asking us for new strings.</p>
+
+<p>Back to reading in code. Let&rsquo;s define a so called <code>function</code> that prompts the user with a question and a callback. A callback is also a function. Let&rsquo;s first talk about what a <code>function</code> is in general:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">my_function</span>(<span style="color:#a6e22e">argument_1</span>, <span style="color:#a6e22e">argument_2</span>, <span style="color:#a6e22e">argument_3</span>) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">argument_2</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">argument_3</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">argument_1</span>;
+}
+</code></pre></div>
+
+<p>A function consists of a name <code>my_function</code>, zero or more arguments (in this case <code>argument_1</code>, <code>argument_2</code>, <code>argument_3</code>) and a <code>body</code>, which is a block of code. The definition always starts with the keyword <code>function</code>, which is mandatory in JavaScript. We can define functions like this, or even assign them as values to a variable:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">f</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">my_function</span>;
+</code></pre></div>
+
+<p>A function defined either way does nothing by itself, but we can invoke them later on:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">my_function</span>(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>); <span style="color:#75715e">//logs 11, and sets x = 4
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>(<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>); <span style="color:#75715e">//logs 17, and sets y = 7
+</span><span style="color:#75715e"></span></code></pre></div>
+
+<p>This allows us to write code once and reuse it multiple times without repeating it. It&rsquo;s the core way of splitting complex programs into separate and easy to manage parts. It&rsquo;s only important we define the function before using it. If we don&rsquo;t, the function is <code>undefined</code>, which will throw an error if we try to invoke it.</p>
+
+<p>Now we know what a function is. We already now preexisting methods, like <code>console.log</code> of the global <code>console</code> object. A method is just a field of an object containing a function as a value, so it&rsquo;s mostly a matter of naming, nothing else. A <code>callback</code> meanwhile is a function argument that is itself a function - we know that we can assign functions as values to variables, so of course we can also use them as arguments to a function. Callbacks are often used in Node.js if the control flow shouldn&rsquo;t be linear from top to bottom anymore. Our example project will hopefully bring light into this concept.</p>
+
+<p>Let&rsquo;s start by defining a <code>prompt</code> function, that is accessing objects <code>stdin</code> (the standard input) and <code>stdout</code> (the standard output), both defined by Node.js to enable these kinds of programs. We will first look at the following code and notice a few new things:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">prompt</span>(<span style="color:#a6e22e">question</span>, <span style="color:#a6e22e">callback</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">stdin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">stdin</span>;
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">stdout</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">stdout</span>;
+    <span style="color:#a6e22e">stdout</span>.<span style="color:#a6e22e">write</span>(<span style="color:#a6e22e">question</span>);
+    <span style="color:#a6e22e">stdin</span>.<span style="color:#a6e22e">once</span>(<span style="color:#e6db74">&#39;data&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">data</span>) {
+        <span style="color:#a6e22e">callback</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">toString</span>().<span style="color:#a6e22e">trim</span>());
+        <span style="color:#a6e22e">prompt</span>(<span style="color:#a6e22e">question</span>, <span style="color:#a6e22e">callback</span>);
+    });
+}
+</code></pre></div>
+
+<p>It takes a question (we assume this is a string), prints it to <code>stdout</code>, followed by this call to <code>stdin.once()</code>, which takes itself a function without a name as a callback, and calls our callback in the process. The next time the user uses the enter key to end the line, this callback is executed, translates the data into a string, uses <code>trim()</code> (removing whitespaces left and right of the string), and gives the resulting string to our callback. Afterwards it calls itself, waiting for the next line to be inserted by the user</p>
+
+<p>Next up, let&rsquo;s build our control flow that waits for <code>'exit'</code> to be entered:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">my_array</span> <span style="color:#f92672">=</span> [];
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">question</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;What string to you want to add to the array?&#39;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">callback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">str</span>) { <span style="color:#75715e">//str is our line
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">str</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;exit&#39;</span>) {
+        <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">exit</span>(); <span style="color:#75715e">//ends the programm when called
+</span><span style="color:#75715e"></span>    }  <span style="color:#66d9ef">else</span> {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">str</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;list&#39;</span>) {
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">element</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">my_array</span>) {
+                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">element</span>);
+            }
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">my_array</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">str</span>);
+        }
+    }
+};
+<span style="color:#a6e22e">prompt</span>(<span style="color:#a6e22e">question</span>, <span style="color:#a6e22e">callback</span>);
+</code></pre></div>
+
+<p>Make sure you define the <code>prompt</code> function first, or the programm will throw an error.</p>
+
+<p>Congratulations, now you know how to read data from the terminal while the program is running, and also about functions, and how to separate functionality. Our last code has been getting a lot bigger than our code before. Even though 25 lines of code isn&rsquo;t much, major programs often take 10, 100, or even 1000 times that. It makes sense to split that code into multiple smaller files, to make them easier to read, and even reusable.</p>
+
+<h1 id="refactoring-our-code-into-multiple-files">Refactoring our code into multiple files</h1>
+
+<p>As the last step for this part of the series, we will be talking about how to distribute your code into multiple source files. While previously we only had one file named <code>app.js</code>, we are now adding another called <code>terminal.js</code>, with functions and variables related to the terminal that we will use inside <code>app.js</code>.</p>
+
+<p>There are multiple ways of doing this kind of split, but the best way is to build a so called JavaScript <code>module</code>. This will help us understand <code>npm</code> in the upcoming third part of the series. For now, make a new file <code>terminal.js</code> in the same folder as your <code>app.js</code>. We will be moving the <code>prompt</code> function into this new file, but using the so <code>module exports</code> functionality:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">prompt</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">question</span>, <span style="color:#a6e22e">callback</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">stdin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">stdin</span>;
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">stdout</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">stdout</span>;
+    <span style="color:#a6e22e">stdout</span>.<span style="color:#a6e22e">write</span>(<span style="color:#a6e22e">question</span>);
+    <span style="color:#a6e22e">stdin</span>.<span style="color:#a6e22e">once</span>(<span style="color:#e6db74">&#39;data&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">data</span>) {
+        <span style="color:#a6e22e">callback</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">toString</span>().<span style="color:#a6e22e">trim</span>());
+        <span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">prompt</span>(<span style="color:#a6e22e">question</span>, <span style="color:#a6e22e">callback</span>);
+    });
+}
+</code></pre></div>
+
+<p>In terms we already understand, <code>exports</code> is an object that represents our module. Only functions and variables defined as fields of that object can be seen and directly used by other files. This is useful to hide internal complexity, and only export simpler functions.</p>
+
+<p>Our main file, <code>app.js</code>, meanwhile doesn&rsquo;t contain the <code>prompt</code>function anymore. Instead, we have to load our module with the <code>require</code> function, that takes the (relative) filepath to the other sourcefile, and returns the <code>exports</code> object, which we normally assign to a local variable:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">terminal</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;./terminal.js&#39;</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">my_array</span> <span style="color:#f92672">=</span> [];
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">question</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;What string to you want to add tothe array?&#39;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">callback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">str</span>) { <span style="color:#75715e">//str is our line
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">str</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;exit&#39;</span>) {
+        <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">exit</span>(); <span style="color:#75715e">//ends the programm when called
+</span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">str</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;list&#39;</span>) {
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">element</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">my_array</span>) {
+                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">element</span>);
+            }
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">my_array</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">str</span>);
+        }
+    }
+};
+<span style="color:#a6e22e">terminal</span>.<span style="color:#a6e22e">prompt</span>(<span style="color:#a6e22e">question</span>, <span style="color:#a6e22e">callback</span>);
+</code></pre></div>
+
+<p>Congratulations! Now you know how to use <code>modules</code> to separate code into multiple files, and access that code in other JavaScript files.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>In this part we learned about JavaScript types, including arrays and objects. We also have shortly visited simple loops of arrays, conditional statements via <code>if</code> and explained how to use functions to make code reusable, and explained how the <code>module</code> system can be used to reuse this code in multiple applications. Finally, besides printing data to the console, we have also learned how to use program arguments, and how to read in data directly from the console.</p>
+
+<p>Next up in part 3 we will be talking about how to write our first HTTP server, and how to use <code>npm</code> to use modules written by other users worldwide in our own code.</p>
+
+<h1 id="your-homework">Your homework</h1>
+
+<p>If you want to strengthen what you have learned, it&rsquo;s best to do some programming tasks yourself, ideas for which you will find in this homework section at the end of every post.</p>
+
+<ul>
+<li>Write a basic calculator that is used like <code>node app.js 4 * 5</code> and prints out <code>20</code> on the console. It should deal <code>*</code>, <code>+</code>, <code>-</code>, and <code>/</code>. Try testing your code with different operands too. Does it work with <code>0</code> too? Or even <code>-1</code>? What happens in case of <code>node app.js 1 / 0</code>? Can you explain this behavior?
+
+<ul>
+<li>You may be wondering on how to convert back from <code>string</code> to <code>number</code>. Just use <code>var my_number = parseFloat(my_string);</code>. This is a global function already defined in ECMAScript 2015 and newer.</li>
+</ul></li>
+<li>Can you extend the calculator to take more than 2 operands, like <code>node app.js 4 * 5 + 3 * 6</code>? For simplicity, do not include parantheses and compute the most left operand first, which would equal <code>(((4 * 5) + 3) * 6) = 138</code> in the given case.</li>
+<li>Advanced task: Can you implement the right order? This equals <code>((4 * 5) + (3 * 6)) = 38</code>.</li>
+</ul>
+
+            </article>
+          </div>
+          
+          <div class='entry-meta-bottom'>
+            
+
+            <div class="entry-categories">
+              <p>
+                <span>Categories</span>
+                
+                <a href="https://n3phtys.github.io/progblog/%20/categories/%20nodejs" title="View all posts in NodeJS">NodeJS</a>
+                <a href="https://n3phtys.github.io/progblog/%20/categories/%20programming" title="View all posts in Programming">Programming</a>
+              </p>
+            </div>
+
+
+
+            <div class="entry-tags">
+              <p>
+                <span>Tags</span>
+                
+                <a href="https://n3phtys.github.io/progblog/%20/tags/%20tutorial" title="View all posts tagged tutorial">tutorial</a>
+                
+                <a href="https://n3phtys.github.io/progblog/%20/tags/%20backend" title="View all posts tagged backend">backend</a>
+                
+                <a href="https://n3phtys.github.io/progblog/%20/tags/%20server" title="View all posts tagged server">server</a>
+                
+                <a href="https://n3phtys.github.io/progblog/%20/tags/%20datatypes" title="View all posts tagged datatypes">datatypes</a>
+                
+
+              </p>
+            </div>
+          </div>
+          
+          <div class="author-meta">
+
+            <div class="author">
+              <img alt='Christopher Kaag' class='avatar avatar-72 photo' height='72' width='72' src="https://avatars1.githubusercontent.com/u/21982754">
+
+              <span>
+                Written by:
+                <a href="https://github.com/n3phtys/ " title="Posts by Christopher Kaag" rel="author ">Christopher Kaag</a>
+              </span>
+            </div>
+            <div class="bio ">
+              
+              <p> </p>
+                 
+              <a class="linkedin " target="_blank " href="https://www.linkedin.com/in/christopher-kaag-a38021155/ ">
+                <i class="fa fa-linkedin-square " title="linkedin icon "></i>
+              </a>
+               
+              <a class="email " target="_blank " href="mailto:christopher.kaag@gmail.com ">
+                <i class="fa fa-envelope " title="email icon "></i>
+              </a>
+               
+              <a class="stackoverflow " target="_blank " href="https://stackoverflow.com/users/1907778/hard-at-sleep ">
+                <i class="fa fa-stack-overflow " title="stackoverflow icon "></i>
+              </a>
+               
+              <a class="github " target="_blank " href="https://github.com/n3phtys ">
+                <i class="fa fa-github " title="github icon "></i>
+              </a>
+              
+
+
+
+
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <section id="comments " class="comments ">
+
+        
+
+        
+
+        
+
+
+      </section>
+    </div>
+
+    
+    
+
+
+    
+    </div>
+
+    <footer id="site-footer" class="site-footer" role="contentinfo">
+	<h1>
+    
+    <a href=""> prog$blog </a>
+    
+	</h1>
+
+			
+			<p class="site-description">programming and other stuff</p>
+			
+
+		<div id="menu-footer" class="menu-container menu-footer" role="navigation">
+		<div class="menu">
+
+      <ul id="menu-footer-items" class="menu-footer-items">
+        
+</ul>
+
+</div>	</div>
+
+<ul class="social-media-icons">
+
+        
+
+        
+
+
+        
+
+        
+
+        
+        <li>
+        <a href="mailto:christopher.kaag@gmail.com"  class="email">
+            <i class="fa fa-envelope" title="email"></i>
+            <span class="screen-reader-text">email</span>
+        </a>
+        </li>
+        
+
+        
+        <li>
+        <a href="https://www.linkedin.com/in/christopher-kaag-a38021155/" class="linkedin" target="_blank">
+            <i class="fa fa-linkedin" title="linkedin"></i>
+            <span class="screen-reader-text">linkedin</span>
+        </a>
+        </li>
+        
+
+        
+        <li>
+        <a href="https://stackoverflow.com/users/1907778/hard-at-sleep"  class="stackoverflow" target="_blank">
+            <i class="fa fa-stack-overflow" title="stackoverflow"></i>
+            <span class="screen-reader-text">stackoverflow</span>
+        </a>
+        </li>
+        
+
+
+        
+        <li>
+        <a href="https://github.com/n3phtys"  class="github" target="_blank">
+            <i class="fa fa-github" title="github"></i>
+            <span class="screen-reader-text">github</span>
+        </a>
+        </li>
+        
+
+
+        
+
+				</ul>	<div class="design-credit">
+		
+		<p></p>
+		
+	</div>
+</footer>
+
+  </div>
+  <script src="https://n3phtys.github.io/progblog/js/jquery.min.js"></script>
+<script src="https://n3phtys.github.io/progblog/js/jquerymigrate.js"></script>
+<script src="https://n3phtys.github.io/progblog/js/production.min.js"></script>
+
+</body>
+</html>
