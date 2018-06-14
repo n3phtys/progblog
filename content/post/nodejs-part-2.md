@@ -23,7 +23,9 @@ There are a few more we need to talk about before continuing.
 
 Besides `number` and `string` we have on more type:
 
-* `boolean`, which means either `true` or `false`. This is the result of a logical operation: something is `true` or it isn't. Most often these kind of values appear within a conditional statement like `if ... else ...`. We will see them often times in actual code, but for now you know enough about `boolean`.
+ `boolean`, which means either `true` or `false`. This is the result of a logical operation: something is `true` or it isn't. Most often these kind of values appear within a conditional statement like `if ... else ...`. We will see them often times in actual code, but for now you know enough about `boolean`.
+
+
 
 
 {{< highlight js >}}
@@ -115,6 +117,8 @@ There are two special values and types:
 
 * `undefined` is the value of a variable that has not been given any value. In other terms, it's the lack of a value. If you forget to set a variable's value, it will contain `undefined`. 
 * `null` is a value of type object, but without being an object. You can use it to describe a missing value of type object. JavaScript itself never sets `null`. It's up to you or other programmers to use it, and to decide on what to use it for. Some programmers try to not use `null` at all, and some programming languages have gotten rid of it altogether.
+
+It may become clear what the difference is by seeing real code:
 
 
 {{< highlight js >}}

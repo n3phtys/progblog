@@ -1,5 +1,5 @@
 ---
-categories : ["NodeJS", "Progamming"]
+categories : ["NodeJS", "Programming"]
 tags : ["tutorial", "backend", "server", "datatypes"]
 date : "2018-06-13"
 description : "How to use npm and express.js to build a Node.js based HTTP server"

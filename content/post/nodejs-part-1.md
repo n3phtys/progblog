@@ -1,5 +1,5 @@
 ---
-categories : ["NodeJS", "Progamming"]
+categories : ["NodeJS", "Programming"]
 tags : ["tutorial", "backend", "server"]
 date : "2018-06-09"
 description : "Learn how to program Hello World in Node.js"
