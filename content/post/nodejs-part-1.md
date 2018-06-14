@@ -76,7 +76,9 @@ To begin, create a new folder and open it in Visual Studio Code. You may do so b
 
 Now enter into this file 
 
-    console.log('Hello World');
+{{< highlight js >}}
+console.log('Hello World');
+{{< /highlight >}}
 
 Let's unwrap this first line of code:
 
@@ -104,11 +106,13 @@ We still have a little time left, so let's add some more code to our application
 Enter the following JavaScript code into the file:
 
 
-    console.log('Hello World');
-    var x1 = 7;
-    var x2 = 6;
-    var s = 'the answer is ' + (x1 * x2);
-    console.log(s);
+{{< highlight js >}}
+console.log('Hello World');
+var x1 = 7;
+var x2 = 6;
+var s = 'the answer is ' + (x1 * x2);
+console.log(s);
+{{< /highlight >}}
 
 
 This brings us up from 1 to 5 statements. One of the new things are variables, declared by a starting `var`, and assigned a value via `=`. 

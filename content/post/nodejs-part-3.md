@@ -13,6 +13,28 @@ showonlyimage : false
 
 # Our first HTTP server by hand 
 
+{{< highlight js >}}
+    var terminal = require('./terminal.js');
+    var my_array = [];
+    var question = 'What string to you want to add to the array?';
+    var callback = function (str) { //str is our line
+        if (str === 'exit') {
+            process.exit(); //ends the programm when called
+        } else {
+            if (str === 'list') {
+                for (var element of my_array) {
+                    console.log(element);
+                }
+            } else {
+                my_array.push(str);
+            }
+        }
+    };
+    terminal.prompt(question, callback);
+
+{{< /highlight >}}
+{{< highlight js >}}
+{{< /highlight >}}
 
 
 # Existing frameworks and libraries 
